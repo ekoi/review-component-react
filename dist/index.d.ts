@@ -3,8 +3,9 @@ import React from 'react';
 interface FormParam {
     id: string;
     user: string;
+    handleRating: any;
 }
-declare const ReviewForm: ({ id, user }: FormParam) => React.JSX.Element;
+declare const ReviewForm: ({ id, user, handleRating }: FormParam) => React.JSX.Element;
 
 interface RatingProps {
     user_id: string;

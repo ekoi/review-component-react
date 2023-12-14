@@ -5,8 +5,9 @@ import StarRating from "./StarRating";
 interface FormParam{
     id: string
     user: string
+    handleRating: any
 }
-const ReviewForm = ({id, user}:FormParam) => {
+const ReviewForm = ({id, user, handleRating}:FormParam) => {
     const [stars, setStars] = useState(0);
     const [invalidStars, setInvalidStars] = useState(false);
     const [success, setSuccess] = useState(false)
@@ -24,36 +25,9 @@ const ReviewForm = ({id, user}:FormParam) => {
                     return;
                 }
                 setInvalidStars(false)
-                let item_name = user + "-" + id
-                console.log('item_name from ReviewForm: ' + item_name)
                 const data = Object.fromEntries(new FormData(event.currentTarget));
-                let textArea_msg = data['reviewText']
-                console.log("textArea message: " + textArea_msg)
-                const url_target = "/review/" + id
-                console.log(url_target)
-
-                let result = await fetch(url_target, {
-                    method: 'POST',
-                    headers: {
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json',
-                        'Access-Control-Allow-Origin': '*'
-                    },
-                    body: JSON.stringify({
-                        "user": user,
-                        "rating": Number(stars),
-                        "review": textArea_msg
-
-                    })
-
-                }).then(response => {
-                        console.log("********" + response.status)
-                        console.log(response)
-                        let x = "/detail/"+id;
-                        console.log("id:" + id)
-                        setSuccess(true);
-                 }
-                );
+                let reviewText = data['reviewText']
+                handleRating(stars, reviewText)
             }}
         >
             <StarRating
