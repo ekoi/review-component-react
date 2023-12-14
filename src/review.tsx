@@ -1,14 +1,12 @@
 import React, {useState} from 'react';
 import * as Form from '@radix-ui/react-form';
 import StarRating from "./StarRating";
-import {useNavigate} from "react-router-dom";
 
 interface FormParam{
     id: string
     user: string
 }
 const ReviewForm = ({id, user}:FormParam) => {
-    const navigate = useNavigate();
     const [stars, setStars] = useState(0);
     const [invalidStars, setInvalidStars] = useState(false);
     const [success, setSuccess] = useState(false)

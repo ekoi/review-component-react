@@ -1,3 +1,2 @@
 import ReviewForm from './review.js';
-
-export {ReviewForm};
+export { ReviewForm };
