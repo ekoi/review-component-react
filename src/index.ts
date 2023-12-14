@@ -1,3 +1,3 @@
 import ReviewForm from './review.js';
-
-export {ReviewForm};
+import StarRating from "./StarRating";
+export {ReviewForm, StarRating};
