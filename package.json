@@ -1,14 +1,14 @@
 {
   "name": "review-component-react",
   "version": "0.0.1",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
-  "types": "dist/index.d.ts",
-  "files": [
-    "dist"
-  ],
+  "main": "src/review.tsx",
   "scripts": {
     "build": "rollup -c"
+  },
+  "dependencies": {
+    "@radix-ui/react-form": "^0.0.3",
+    "react-router-dom": "^6.14.2",
+    "react-simple-star-rating": "^5.1.7"
   },
   "peerDependencies": {
     "react": "^18.0.0"
