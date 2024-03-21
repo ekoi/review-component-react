@@ -14,7 +14,7 @@ const ReviewForm = ({id, user, handleRating}:FormParam) => {
 
     return (
         success ?
-            <div>Succesfully submitted</div>
+            <div className="reviewForm">Succesfully submitted</div>
             :
         <Form.Root
             // `onSubmit` only triggered if it passes client-side validation
@@ -58,7 +58,3 @@ const ReviewForm = ({id, user, handleRating}:FormParam) => {
 
 export default ReviewForm;
 
-
- function handleSubmit(formData: FormData) {
-    console.log(formData);
-  }
