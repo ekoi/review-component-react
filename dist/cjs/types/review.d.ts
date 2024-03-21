@@ -1,8 +1,6 @@
 import React from 'react';
 interface FormParam {
-    id: string;
-    user: string;
-    handleRating: any;
+    handleRating: (stars: number, reviewText: string) => void;
 }
-declare const ReviewForm: ({ id, user, handleRating }: FormParam) => React.JSX.Element;
-export default ReviewForm;
+export default function ReviewForm({ handleRating }: FormParam): React.JSX.Element;
+export {};
