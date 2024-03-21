@@ -10,6 +10,10 @@
   "scripts": {
     "build": "rollup -c"
   },
+  "dependencies": {
+    "@radix-ui/react-form": "^0.0.3",
+    "react-simple-star-rating": "^5.1.7"
+  },
   "peerDependencies": {
     "react": "^18.0.0"
   },
