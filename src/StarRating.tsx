@@ -8,23 +8,22 @@ const tooltipArray = [
   "Great",
   "Awesome",
 ];
+
 interface RatingProps {
   user_id: string
   page_id: string
   rate: number
   readonly : boolean
-  handleRating: any
+  handleRating: (stars: number) => void
 }
 export default function StarRating({ user_id, page_id, rate , readonly, handleRating}: RatingProps) {
   return (
-    <div>
       <Rating
-        onClick={(number) => handleRating(number)}
+        onClick={handleRating}
         initialValue={rate}
         readonly={readonly}
         showTooltip
         tooltipArray={tooltipArray}
       />
-    </div>
   )
 }
